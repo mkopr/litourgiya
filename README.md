@@ -48,9 +48,9 @@ Endpoints
 /api/login
 -
 **Method POST**
->To login user pass in request body userrname @cr
->**Body**: `{"Username":"your_name"}`
->**Responses**: 
+>To login user pass in request body userrname  
+>**Body**: `{"Username":"your_name"}`  
+>**Responses**:  
 >- HTTP 200 OK -> `{"message": "your_name exists in db"}`
 >- HTTP 201 CREATED -> `{"message": "created user: your_name"}`
 >- HTTP 400 BAD REQUEST -> serializer errors
@@ -58,9 +58,9 @@ Endpoints
 /api/download
 -
 **Method GET**
-> Get data from outside api and put it to celery task and convert to database objects
->**Header**:  `Authorization: Username your_name`
->**Responses**: 
+> Get data from outside api and put it to celery task and convert to database objects  
+>**Header**:  `Authorization: Username your_name`  
+>**Responses**:  
 >- HTTP 200 OK -> `{"message": "Download triggered for dates: start=2017-08-02', end=2018-09-03"}`
 >- HTTP 400 BAD REQUEST -> serializer errors
 >- HTTP 401 UNAUTHORIZED
@@ -68,9 +68,9 @@ Endpoints
 /api/search
 -
 **Method GET**
->Get all data related with user
->**Header**:  `Authorization: Username your_name`
->**Params with examples**: 
+>Get all data related with user  
+>**Header**:  `Authorization: Username your_name`  
+>**Params with examples**:  
 >- start=2018-08-12
 >- end=2018-09-12
 >- weekday=monday
@@ -123,21 +123,21 @@ Endpoints
 >- HTTP 401 UNAUTHORIZED
 
 **Method PUT**
->Edit data related with user.
->To edit calendar set correct date in request body
->To edit celebration set corrent ID in request body.
->**Header**:  `Authorization: Username your_name`
->**Body**: `{"weekday": "thursday", "date": "2018-08-02", "season_week": 17, "celebrations": [ { "calendar": 9, "rank": "ferial", "rank_num": 3.13, "colour": "green", "id": 15, "title": "Thursday, 17th week in Ordinary Time" }, { "calendar": 9, "rank": "optional memorial", "rank_num": 3.12, "colour": "white", "id": 16, "title": "The most Saint Eusebius of Vercelli, bishop" }, ], "season": "non-ordinary"}`
->**Responses**: 
+>Edit data related with user.  
+>To edit calendar set correct date in request body  
+>To edit celebration set corrent ID in request body.  
+>**Header**:  `Authorization: Username your_name`  
+>**Body**: `{"weekday": "thursday", "date": "2018-08-02", "season_week": 17, "celebrations": [ { "calendar": 9, "rank": "ferial", "rank_num": 3.13, "colour": "green", "id": 15, "title": "Thursday, 17th week in Ordinary Time" }, { "calendar": 9, "rank": "optional memorial", "rank_num": 3.12, "colour": "white", "id": 16, "title": "The most Saint Eusebius of Vercelli, bishop" }, ], "season": "non-ordinary"}`  
+>**Responses**:  
 >- HTTP 200 OK
 >- HTTP 400 BAD REQUEST -> serializer errors
 >- HTTP 401 UNAUTHORIZED
 >- HTTP 404 NOT FOUND
 
 **Method DELETE**
->Delete all related with user calendars and celebrations
->**Header**:  `Authorization: Username your_name`
->**Responses**: 
+>Delete all related with user calendars and celebrations  
+>**Header**:  `Authorization: Username your_name`  
+>**Responses**:  
 >- HTTP 200 OK
 >- HTTP 400 BAD REQUEST
 >- HTTP 401 UNAUTHORIZED
@@ -145,9 +145,9 @@ Endpoints
 /api/random
 -
 **Method GET**
->Get one random object related with user
->**Header**:  `Authorization: Username your_name`
->**Responses**: 
+>Get one random object related with user  
+>**Header**:  `Authorization: Username your_name`  
+>**Responses**:  
 >- HTTP 200 OK -> `{
     "date": "2018-02-19T00:00:00+00:00",
     "season_week": 1,
