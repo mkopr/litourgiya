@@ -6,7 +6,7 @@ Description
 =
 Service
 -
-Service that allows to get. edit and delete info about Church Calendar:  
+Service that allows to get/edit/delete info about Church Calendar:  
 - calendar info - date, season, season week, weekday  
 - celebrations info - title, colour, rank, rank number
 
@@ -49,37 +49,36 @@ Endpoints
 -
 **Method POST**
 >- To login user pass in request body userrname
->- Body: 
->-- `{"Username":"your_name"}`
->- Responses: 
->-- HTTP 200 OK -> `{"message": "your_name exists in db"}`
->-- HTTP 201 CREATED -> `{"message": "created user: your_name"}`
->-- HTTP 400 BAD REQUEST -> serializer errors
+>- Body: `{"Username":"your_name"}`
+>- *Responses*: 
+>- HTTP 200 OK -> `{"message": "your_name exists in db"}`
+>- HTTP 201 CREATED -> `{"message": "created user: your_name"}`
+>- HTTP 400 BAD REQUEST -> serializer errors
 
 /api/download
 -
 **Method GET**
 >- Get data from outside api and put it to celery task and convert to database objects
 >- Header:  `Authorization: Username your_name`
->- Responses: 
->-- HTTP 200 OK -> `{"message": "Download triggered for dates: start=2017-08-02', end=2018-09-03"}`
->-- HTTP 400 BAD REQUEST -> serializer errors
->-- HTTP 401 UNAUTHORIZED
+>- *Responses*: 
+>- HTTP 200 OK -> `{"message": "Download triggered for dates: start=2017-08-02', end=2018-09-03"}`
+>- HTTP 400 BAD REQUEST -> serializer errors
+>- HTTP 401 UNAUTHORIZED
 
 /api/search
 -
 **Method GET**
 >- Get all data related with user
 >- Header:  `Authorization: Username your_name`
->- Params with examples: 
->-- start=2018-08-12
->-- end=2018-09-12
->-- weekday=monday
->-- color=white
->-- page=2
->-- size=50
->- Responses: 
->-- HTTP 200 OK -> `{
+>- *Params with examples*: 
+>- start=2018-08-12
+>- end=2018-09-12
+>- weekday=monday
+>- color=white
+>- page=2
+>- size=50
+>- *Responses*: 
+>- HTTP 200 OK -> `{
     "count": 1,
     "size": 20,
     "page": 1,
@@ -120,37 +119,36 @@ Endpoints
             "date": "2018-07-02T00:00:00+00:00",
             "season": "ordinary"
         }]`
->-- HTTP 400 BAD REQUEST -> serializer errors
->-- HTTP 401 UNAUTHORIZED
+>- HTTP 400 BAD REQUEST -> serializer errors
+>- HTTP 401 UNAUTHORIZED
 
 **Method PUT**
 >- Edit data related with user.
 >- To edit calendar set correct date in request body
 >- To edit celebration set corrent ID in request body.
 >- Header:  `Authorization: Username your_name`
->- Body: 
->-- `{"weekday": "thursday", "date": "2018-08-02", "season_week": 17, "celebrations": [ { "calendar": 9, "rank": "ferial", "rank_num": 3.13, "colour": "green", "id": 15, "title": "Thursday, 17th week in Ordinary Time" }, { "calendar": 9, "rank": "optional memorial", "rank_num": 3.12, "colour": "white", "id": 16, "title": "The most Saint Eusebius of Vercelli, bishop" }, ], "season": "non-ordinary"}`
->- Responses: 
->-- HTTP 200 OK
->-- HTTP 400 BAD REQUEST -> serializer errors
->-- HTTP 401 UNAUTHORIZED
->-- HTTP 404 NOT FOUND
+>- Body: `{"weekday": "thursday", "date": "2018-08-02", "season_week": 17, "celebrations": [ { "calendar": 9, "rank": "ferial", "rank_num": 3.13, "colour": "green", "id": 15, "title": "Thursday, 17th week in Ordinary Time" }, { "calendar": 9, "rank": "optional memorial", "rank_num": 3.12, "colour": "white", "id": 16, "title": "The most Saint Eusebius of Vercelli, bishop" }, ], "season": "non-ordinary"}`
+>- *Responses*: 
+>- HTTP 200 OK
+>- HTTP 400 BAD REQUEST -> serializer errors
+>- HTTP 401 UNAUTHORIZED
+>- HTTP 404 NOT FOUND
 
 **Method DELETE**
 >- Delete all related with user calendars and celebrations
 >- Header:  `Authorization: Username your_name`
->- Responses: 
->-- HTTP 200 OK
->-- HTTP 400 BAD REQUEST
->-- HTTP 401 UNAUTHORIZED
+>- *Responses*: 
+>- HTTP 200 OK
+>- HTTP 400 BAD REQUEST
+>- HTTP 401 UNAUTHORIZED
 
 /api/random
 -
 **Method GET**
 >- Get one random object related with user
 >- Header:  `Authorization: Username your_name`
->- Responses: 
->-- HTTP 200 OK -> `{
+>- *Responses*: 
+>- HTTP 200 OK -> `{
     "date": "2018-02-19T00:00:00+00:00",
     "season_week": 1,
     "weekday": "monday",
@@ -168,4 +166,4 @@ Endpoints
     "id": 267,
     "user": 1
 }`
->-- HTTP 401 UNAUTHORIZED
+>- HTTP 401 UNAUTHORIZED
