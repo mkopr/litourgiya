@@ -48,7 +48,7 @@ Endpoints
 /api/login
 -
 **Method POST**
->To login user pass in request body userrname
+>To login user pass in request body userrname @cr
 >**Body**: `{"Username":"your_name"}`
 >**Responses**: 
 >- HTTP 200 OK -> `{"message": "your_name exists in db"}`
