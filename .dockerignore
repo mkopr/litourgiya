@@ -1,0 +1,4 @@
+osm/
+.idea/
+.git/
+*.pyc

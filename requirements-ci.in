@@ -1,0 +1,7 @@
+pytest
+pytest-cov
+pytest-flask
+flake8
+isort
+flake8-isort
+flake8-coding

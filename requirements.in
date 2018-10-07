@@ -1,0 +1,11 @@
+flask
+flask-restful
+marshmallow
+flask-marshmallow
+flask-sqlalchemy
+marshmallow-sqlalchemy
+requests
+celery
+flask-redis
+celery
+flask-celery
