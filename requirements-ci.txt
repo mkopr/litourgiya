@@ -27,4 +27,4 @@ pytest-flask==0.13.0
 pytest==3.8.2
 six==1.11.0               # via more-itertools, pytest
 testfixtures==6.3.0       # via flake8-isort
-werkzeug==0.14.1          # via flask, pytest-flask
+werkzeug==0.15.3          # via flask, pytest-flask
