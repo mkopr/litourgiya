@@ -4,31 +4,79 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
-amqp==2.3.2               # via kombu
-aniso8601==3.0.2          # via flask-restful
-billiard==3.5.0.4         # via celery
+amqp==2.3.2
+    # via kombu
+aniso8601==3.0.2
+    # via flask-restful
+billiard==3.5.0.4
+    # via celery
 celery==4.2.1
-chardet==3.0.4            # via requests
-click==7.0                # via flask
+    # via
+    #   -r requirements.in
+    #   flask-celery
+certifi==2020.12.5
+    # via requests
+chardet==3.0.4
+    # via requests
+click==7.0
+    # via flask
 flask-celery==2.4.3
+    # via -r requirements.in
 flask-marshmallow==0.9.0
+    # via -r requirements.in
 flask-redis==0.3.0
+    # via -r requirements.in
 flask-restful==0.3.6
-flask-script==2.0.6       # via flask-celery
+    # via -r requirements.in
+flask-script==2.0.6
+    # via flask-celery
 flask-sqlalchemy==2.3.2
+    # via -r requirements.in
 flask==1.0.2
-idna==2.7                 # via requests
-itsdangerous==0.24        # via flask
-jinja2==2.10              # via flask
-kombu==4.2.1              # via celery
-markupsafe==1.0           # via jinja2
+    # via
+    #   -r requirements.in
+    #   flask-celery
+    #   flask-marshmallow
+    #   flask-redis
+    #   flask-restful
+    #   flask-script
+    #   flask-sqlalchemy
+idna==2.7
+    # via requests
+itsdangerous==0.24
+    # via flask
+jinja2==2.11.3
+    # via flask
+kombu==4.2.1
+    # via celery
+markupsafe==1.0
+    # via jinja2
 marshmallow-sqlalchemy==0.14.1
+    # via -r requirements.in
 marshmallow==2.15.6
-pytz==2018.5              # via celery, flask-restful
-redis==2.10.6             # via flask-redis
+    # via
+    #   -r requirements.in
+    #   flask-marshmallow
+    #   marshmallow-sqlalchemy
+pytz==2018.5
+    # via
+    #   celery
+    #   flask-restful
+redis==2.10.6
+    # via flask-redis
 requests==2.19.1
-six==1.11.0               # via flask-marshmallow, flask-restful
-sqlalchemy==1.2.12        # via flask-sqlalchemy, marshmallow-sqlalchemy
-urllib3==1.23             # via requests
-vine==1.1.4               # via amqp
-werkzeug==0.14.1          # via flask
+    # via -r requirements.in
+six==1.11.0
+    # via
+    #   flask-marshmallow
+    #   flask-restful
+sqlalchemy==1.2.12
+    # via
+    #   flask-sqlalchemy
+    #   marshmallow-sqlalchemy
+urllib3==1.23
+    # via requests
+vine==1.1.4
+    # via amqp
+werkzeug==0.14.1
+    # via flask
